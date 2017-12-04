@@ -4,10 +4,10 @@
 
   <table>
     <tr>
-      <td><button (click)="changeTimezone('PST')">PST</button></td>
-      <td><button (click)="changeTimezone('MST')">MST</button></td>
-      <td><button (click)="changeTimezone('CST')">CST</button></td>
-      <td><button (click)="changeTimezone('EST')">EST</button></td>
+      <td><button [ngClass]="{highlight: timezone === 'PST'}" (click)="changeTimezone('PST')">PST</button></td>
+      <td><button [ngClass]="{highlight: timezone === 'MST'}" (click)="changeTimezone('MST')">MST</button></td>
+      <td><button [ngClass]="{highlight: timezone === 'CST'}" (click)="changeTimezone('CST')">CST</button></td>
+      <td><button [ngClass]="{highlight: timezone === 'EST'}" (click)="changeTimezone('EST')">EST</button></td>
       <td><button (click)="changeTimezone('')">Clear</button></td>
     </tr>
     <tr>

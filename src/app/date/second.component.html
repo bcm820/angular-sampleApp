@@ -1,0 +1,16 @@
+<div [class.blue]='true'>
+
+  <h3>{{title}}</h3>
+  <ul>
+    <li>{{ today }}</li>
+    <li>{{ today | date }}</li>
+    <li>{{ today | date:'fullDate' }}</li>
+    <li>{{ today | date:'longDate' }}</li>
+    <li>{{ today | date:'mediumDate' }}</li>
+    <li>{{ today | date:'shortDate' }}</li>
+    <li>{{ today | date:'MM/dd/yyyy' }}</li>
+  </ul>
+
+  <div><button (click)="update()">Update</button></div>
+
+</div>

@@ -1,0 +1,15 @@
+<div [class.black]='true'>
+
+  <h3>{{title}}</h3>
+  <ul>
+    <li>{{ today | date:'mediumTime' }}</li>
+    <li>{{ today | date:'shortTime' }}</li>
+    <li>{{ today | date:'hh:mm:ss aa zzzz' }}</li>
+  </ul>
+  <ul>
+      <li>{{ today | date:'medium' }}</li>
+      <li>{{ today | date:'short' }}</li>
+      <li>{{ today | date:'MM/dd/yyyy hh:mm:ss aa zzzz' }}</li>
+    </ul>
+
+</div>

@@ -1,0 +1,36 @@
+<div>
+
+<table>
+
+  <tr><td colspan=2><strong>Currency Pipes</strong></td></tr>
+  <tr><td>Number:</td><td> {{ value }} </td></tr>
+  <tr><td>USD:</td><td> {{ value | currency }} </td></tr>
+  <tr><td>EUR:</td><td> {{ value | currency:'EUR' }} </td></tr>
+  <tr><td>AUS:</td><td> {{ value | currency:'AUS' }} </td></tr>
+  <tr><td>CNY:</td><td> {{ value | currency:'CNY' }} </td></tr>
+  <tr><td>&nbsp;</td></tr>
+
+  <tr><td colspan=2><strong>Datetime Pipes</strong></td></tr>
+  <tr><td>Object:</td><td> {{ today }} </td></tr>
+  <tr><td>'medium':</td><td> {{ today | date:'medium' }} </td></tr>
+  <tr><td>'short':</td><td> {{ today | date:'short' }} </td></tr>
+  <tr><td>specific:</td><td> {{ today | date:'MM/dd/yyyy hh:mm:ss aa zzzz' }} </td></tr>
+  <tr><td>&nbsp;</td></tr>
+
+  <tr><td colspan=2><strong>Date Pipe</strong></td></tr>
+  <tr><td>'date':</td><td> {{ today | date }} </td></tr>
+  <tr><td>'fullDate':</td><td> {{ today | date:'fullDate' }} </td></tr>
+  <tr><td>'longDate':</td><td> {{ today | date:'longDate' }} </td></tr>
+  <tr><td>'mediumDate':</td><td> {{ today | date:'mediumDate' }} </td></tr>
+  <tr><td>'shortDate':</td><td> {{ today | date:'shortDate' }} </td></tr>
+  <tr><td>specific:</td><td> {{ today | date:'MM/dd/yyyy' }} </td></tr>
+  <tr><td>&nbsp;</td></tr>
+
+  <tr><td colspan=2><strong>Time Pipes</strong></td></tr>
+  <tr><td>'mediumTime':</td><td> {{ today | date:'mediumTime' }} </td></tr>
+  <tr><td>'shortTime':</td><td> {{ today | date:'shortTime' }} </td></tr>
+  <tr><td>specific:</td><td> {{ today | date:'hh:mm:ss aa zzzz' }} </td></tr>
+
+</table>
+
+</div>

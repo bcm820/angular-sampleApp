@@ -4,25 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-// import { FirstComponent } from './first/first.component';
-// import { SecondComponent } from './second/second.component';
-// import { ThirdComponent } from './third/third.component';
-
-// import { NoteService } from './first/note.service';
+import { TemplatesComponent } from './templates/templates.component';
+import { DojomailComponent } from './dojomail/dojomail.component';
+import { RetroBarcodeComponent } from './retro-barcode/retro-barcode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // FirstComponent,
-    // SecondComponent,
-    // ThirdComponent
+    TemplatesComponent,
+    DojomailComponent,
+    RetroBarcodeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
 		HttpModule
   ],
-  // providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

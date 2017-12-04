@@ -4,16 +4,7 @@
 
   <table>
     <tr>
-      <td [ngStyle]="{'background-color': barcode.color1}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color2}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color3}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color4}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color5}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color6}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color7}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color8}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color9}">&nbsp;</td>
-      <td [ngStyle]="{'background-color': barcode.color10}">&nbsp;</td>
+      <td *ngFor="let color of bars" [ngStyle]="{'background-color': color}">&nbsp;</td>
     </tr>
   </table>
 

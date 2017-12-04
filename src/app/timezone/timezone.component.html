@@ -1,0 +1,20 @@
+<div>
+
+  <h1>{{title}}</h1>
+
+  <table>
+    <tr>
+      <td><button (click)="changeTimezone('PST')">PST</button></td>
+      <td><button (click)="changeTimezone('MST')">MST</button></td>
+      <td><button (click)="changeTimezone('CST')">CST</button></td>
+      <td><button (click)="changeTimezone('EST')">EST</button></td>
+      <td><button (click)="changeTimezone('')">Clear</button></td>
+    </tr>
+    <tr>
+      <td colspan=5>
+        <h1 *ngIf="isTZ">{{now | date:'medium':timezone}}</h1>
+      </td>
+    </tr>
+  </table>
+
+</div>

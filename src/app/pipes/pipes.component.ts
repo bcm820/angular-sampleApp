@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-templates',
-  templateUrl: './templates.component.html',
-  styleUrls: ['./templates.component.css']
+  selector: 'app-pipes',
+  templateUrl: './pipes.component.html',
+  styleUrls: ['./pipes.component.css']
 })
-export class TemplatesComponent implements OnInit {
+export class PipesComponent implements OnInit {
 
   value: number = 5678.9;
 

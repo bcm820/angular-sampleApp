@@ -1,0 +1,19 @@
+td{
+    background-color: brown;
+    width: 75px;
+    height: 75px;
+    vertical-align: middle;
+    text-align: center
+}
+
+.red{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+}
+
+.green{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+}

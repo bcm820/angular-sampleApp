@@ -1,0 +1,14 @@
+<div>
+
+<h1>{{title}}</h1>
+
+<table>
+  <tr>
+    <td *ngFor="let switch of switchboard; let i = index">
+      <button *ngIf="!switch" [ngClass]="{red:true}" (click)="switchIt(i)">Off</button>
+      <button *ngIf="switch" [ngClass]="{green:true}" (click)="switchIt(i)">On</button>
+    </td>
+  </tr>
+</table>
+
+</div>

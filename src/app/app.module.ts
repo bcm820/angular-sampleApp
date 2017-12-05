@@ -9,6 +9,7 @@ import { DojomailComponent } from './dojomail/dojomail.component';
 import { RetroBarcodeComponent } from './retro-barcode/retro-barcode.component';
 import { TimezoneComponent } from './timezone/timezone.component';
 import { SwitchboardComponent } from './switchboard/switchboard.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SwitchboardComponent } from './switchboard/switchboard.component';
     RetroBarcodeComponent,
     TimezoneComponent,
     SwitchboardComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

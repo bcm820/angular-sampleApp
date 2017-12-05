@@ -1,0 +1,212 @@
+
+<div class=container>
+<div class=row>
+<div class=col-sm-2></div>
+<div class=col-sm-9>
+
+<h2 class=text-center>Registration</h2>
+
+<fieldset>
+<legend>Account Information</legend>
+
+<form (submit)="onSubmit(thisForm)" #thisForm="ngForm" class=form-horizontal>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">First Name:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=first required minlength=3
+      [(ngModel)]='user.first' #first='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="first.errors && first.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!first.errors"></span>
+        <span class=error [hidden]="!first.errors.required">First name is required</span>
+        <span class=error [hidden]="!first.errors.minlength">First name must be 3 characters min.</span>
+      </span>
+      <span *ngIf="first.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">Last Name:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=last required minlength=3
+      [(ngModel)]='user.last' #last='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="last.errors && last.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!last.errors"></span>
+        <span class=error [hidden]="!last.errors.required">last name is required</span>
+        <span class=error [hidden]="!last.errors.minlength">last name must be 3 characters min.</span>
+      </span>
+      <span *ngIf="last.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+  
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">Email:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=email required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      [(ngModel)]='user.email' #email='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="email.errors && email.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!email.errors"></span>
+        <span class=error [hidden]="!email.errors.required">email is required</span>
+        <span class=error [hidden]="!email.errors.pattern">enter valid email address format.</span>
+      </span>
+      <span *ngIf="email.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">Password:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=password name=password required minlength=8
+      [(ngModel)]='user.password' #password='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="password.errors && password.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!password.errors"></span>
+        <span class=error [hidden]="!password.errors.required">password is required</span>
+        <span class=error [hidden]="!password.errors.minlength">Password must be 8 characters min.</span>
+      </span>
+      <span *ngIf="password.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group *ngIf="password.dirty || password.touched">
+    <div class="col-sm-3 text-right"><label class="control-label">Password confirmation:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=password name=confirmation required pattern={{user.password}}
+      [(ngModel)]='user.confirmation' #confirmation='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="confirmation.errors && confirmation.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!confirmation.errors"></span>
+        <span class=error [hidden]="!confirmation.errors.required">confirmation is required</span>
+        <span class=error [hidden]="!confirmation.errors.pattern">confirmation must match password.</span>
+      </span>
+      <span *ngIf="confirmation.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+  
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">Street Address:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=address required minlength=5
+      [(ngModel)]='user.address' #address='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="address.errors && address.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!address.errors"></span>
+        <span class=error [hidden]="!address.errors.required">address is required</span>
+        <span class=error [hidden]="!address.errors.minlength">address must be 5 characters min</span>
+      </span>
+      <span *ngIf="address.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">Unit/Apt. #:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=unit pattern="\d{1,}" maxlength=8
+      [(ngModel)]='user.unit' #unit='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="unit.errors && unit.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!unit.errors"></span>
+        <span class=error [hidden]="!unit.errors.pattern">unit/apt. # must be numbers</span>
+      </span>
+      <span *ngIf="unit.value && unit.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">City:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=city required minlength=5
+      [(ngModel)]='user.city' #city='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="city.errors && city.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!city.errors"></span>
+        <span class=error [hidden]="!city.errors.required">city is required</span>
+        <span class=error [hidden]="!city.errors.minlength">city must be 5 characters min</span>
+      </span>
+      <span *ngIf="city.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">State:</label></div>
+    <div class=col-sm-3>
+      <input class=form-control type=text name=state required pattern="[A-Za-z]{2}"
+      [(ngModel)]='user.state' #state='ngModel'/>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="state.errors && state.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!state.errors"></span>
+        <span class=error [hidden]="!state.errors.required">state is required</span>
+        <span class=error [hidden]="!state.errors.pattern">use state abbreviations</span>
+      </span>
+      <span *ngIf="state.valid" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class="col-sm-3 text-right"><label class="control-label">I'm feeling lucky:</label></div>
+    <div class=col-sm-3>
+      <select class=form-control name=lucky required [(ngModel)]='user.lucky' #lucky='ngModel'>
+        <option value=Yes>Yes</option>
+        <option value=No>No</option>
+      </select>
+    </div>
+    <div class="col-sm-6 form-control-static">
+      <span *ngIf="!lucky.value && lucky.dirty">
+        <span class="error glyphicon glyphicon-remove" [hidden]="!lucky.errors"></span>
+        <span class=error [hidden]="!lucky.errors.required">lucky is required</span>
+      </span>
+      <span *ngIf="lucky.value" class="glyphicon glyphicon-ok valid"></span>
+    </div>
+  </div>
+
+  <div class=form-group>
+    <div class=col-sm-3></div>
+    <div class=col-sm-3>
+      <input *ngIf="!thisForm.valid || !lucky.value" type=submit value=Register class="btn btn-block btn-danger disabled" [disabled]="!thisForm.valid">
+      <input *ngIf="thisForm.valid && lucky.value" type=submit value=Register class="btn btn-block btn-primary" data-toggle="modal" data-target="#success">
+    </div>
+  </div>
+
+</form>
+
+</fieldset>
+
+
+</div>
+<div class=col-sm-1></div>
+</div>
+
+<!-- Modal -->
+<div id="success" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Thanks for registering!</h4>
+      </div>
+      <div class="modal-body">
+        <p class=valid>Thank you for registering with us, {{latest.first}}. We just sent you a confirmation email at {{latest.email}}. We will send all mail to {{latest.address}}, {{latest.city}}, {{latest.state}}. Have a wonderful day!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
